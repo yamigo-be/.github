@@ -16,6 +16,8 @@ jobs:
           repo: ${{ github.event.repository.name }}
           issue_number: ${{ github.event.issue.number }}
           body: '{"labels":"triage"}'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   add-to-projects:
     runs-on: ubuntu-latest
     steps:
