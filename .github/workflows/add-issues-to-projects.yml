@@ -4,7 +4,19 @@ on:
   workflow_call:
 
 jobs:
-  default:
+  add-triage-label:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'issues' }}
+    steps:
+      - name: Add 'triage' label to Issue
+        uses: octokit/request-action@v2.1.4
+        with:
+          route: POST /repos/{owner}/{repo}/issues/{issue_number}/labels
+          owner: ${{ github.repository_owner }}
+          repo: ${{ github.event.repository.name }}
+          issue_number: ${{ github.event.issue.number }}
+          body: '{"labels":"triage"}'
+  add-to-projects:
     runs-on: ubuntu-latest
     steps:
       - name: Add To GitHub Projects
