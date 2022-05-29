@@ -15,7 +15,7 @@ jobs:
           owner: ${{ github.repository_owner }}
           repo: ${{ github.event.repository.name }}
           issue_number: ${{ github.event.issue.number }}
-          body: '{"labels":"triage"}'
+          labels: triage
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   add-to-projects:
