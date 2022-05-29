@@ -1,0 +1,3 @@
+# Yamigo GitHub meta repository
+
+This repository contains some GitHub related stuff like shared workflows, templates ...
