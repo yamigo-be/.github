@@ -11,4 +11,4 @@ jobs:
         uses: actions/add-to-project@v0.0.3
         with:
           project-url: https://github.com/orgs/yamigo-be/projects/7
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GH_PROJECTS_PAT }}
